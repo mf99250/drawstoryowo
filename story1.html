@@ -45,10 +45,9 @@
 					font-size:20px; 
 					font-weight:bold;
 					color:lightslategray;
-					background-color:#F0FFFF;
 					width:100px;
 					position:absolute;
-					left:600px;}
+					left:600;}
 		</style>
 		<meta charset = "utf-8">
 		<!--<link rel = "stylesheet" type="text/css" href = "index.css">-->
@@ -87,7 +86,7 @@
 		document.tickform.tickfield.value = tl[x].substring(0, pos);
 		
 		var nextbutton2 = document.getElementById("next2");
-			nextbutton2.innerHTML += '<p onclick="next2()" class = "button">[SKIP]</p>';
+			nextbutton2.innerHTML += '<p onclick="next2()" class = "skip">[SKIP]</p>';
 
 		if(pos++ == l) {
 

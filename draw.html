@@ -58,7 +58,7 @@
             var $canvas = $("#cSketchPad");
             var ctx = $canvas[0].getContext("2d");
             ctx.lineCap = "round";
-            ctx.fillStyle = "black"; //整個canvas塗上白色背景避免PNG的透明底色效果
+            ctx.fillStyle = "#e0e0e0"; //整個canvas塗上白色背景避免PNG的透明底色效果
 			ctx.globalAlpha=0.03;
             ctx.fillRect(0, 0, $canvas.width(), $canvas.height());
             var drawMode = false;
@@ -100,7 +100,7 @@
     </script>
 </head>
 <body>
-<embed src="bgm01.mp3" autostart=true hidden=true loop=true>
+<embed src="bgm02.mp3" autostart=true hidden=true loop=true>
 <div id="dPallete"></div>
 <div id="dLine"></div>
 <div id="dCanvas">
