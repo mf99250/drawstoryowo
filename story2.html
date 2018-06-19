@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>繪本啦啦啦啦啦ouo</title>
+		<title>"繪"本</title>
 		<script src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js"></script>
 		<style type="text/css">
 			#bg     { background-color: rgb(0,0,0);
@@ -25,6 +25,16 @@
 				top: 120px;
 				left: 100px;
 			}
+			.skip  {cursor:pointer;
+					font-family:微軟正黑體; 
+					text-align:center;	 
+					font-size:20px; 
+					font-weight:bold;
+					color:lightslategray;
+					background-color:#F0FFFF;
+					width:100px;
+					position:absolute;
+					left:600px;}
 			.button{cursor:pointer;
 				font-family:微軟正黑體; 
 				text-align:center;	 
@@ -42,6 +52,8 @@
 		<!-- Begin
 
 		var max=0;
+		
+		let count = 0;
 
 		function textlist() {
 
@@ -68,6 +80,9 @@
 		function textticker() {
 
 		document.tickform.tickfield.value = tl[x].substring(0, pos);
+		
+		var nextbutton2 = document.getElementById("next2");
+			nextbutton2.innerHTML += '<p onclick="next2()" class = "button">[SKIP]</p>';
 
 		if(pos++ == l) {
 
@@ -83,8 +98,13 @@
 			//pos = 100;
 		} else
 
-		setTimeout("textticker()", 170);
+		if(count != 0)  setTimeout("textticker()", 10);
+		else setTimeout("textticker()", 130);
 
+		}
+		function next2()
+		{
+		   count = count+1;
 		}
 		function next()
 		{
@@ -102,7 +122,8 @@
 			<img id = "bg" style="display:block; margin:auto;" width="1100px" height="565px"> 
 			<h3><form name=tickform><textarea name=tickfield rows=8 cols=108 style="background-color: rgb(0,0,0); 
 			color: rgb(255,255,255); cursor: pointer; font-family: Microsoft JhengHei; font-size: 20px" wrap=virtual></textarea></form>
-			<p id = "next" class = "button"></p></h3>
+			<p id = "next" class = "button">
+			<p id = "next2" class = "skip" ></p></h3>
 
 		</div>
 		

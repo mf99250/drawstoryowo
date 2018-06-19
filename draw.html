@@ -3,7 +3,7 @@
  
 <html>
 <head>
-    <title>勇者塗鴉板</title>
+    <title>"繪"本</title>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.js">
     </script>
     <style>
@@ -58,8 +58,8 @@
             var $canvas = $("#cSketchPad");
             var ctx = $canvas[0].getContext("2d");
             ctx.lineCap = "round";
-            ctx.fillStyle = "white"; //整個canvas塗上白色背景避免PNG的透明底色效果
-			ctx.globalAlpha=0.1;
+            ctx.fillStyle = "black"; //整個canvas塗上白色背景避免PNG的透明底色效果
+			ctx.globalAlpha=0.03;
             ctx.fillRect(0, 0, $canvas.width(), $canvas.height());
             var drawMode = false;
             //canvas點選、移動、放開按鍵事件時進行繪圖動作
@@ -95,6 +95,8 @@
             });
 			
         });
+		
+		
     </script>
 </head>
 <body>
@@ -102,9 +104,10 @@
 <div id="dPallete"></div>
 <div id="dLine"></div>
 <div id="dCanvas">
-<canvas id="cSketchPad" width="300" height="300" style="border: 2px solid gray" />
+<canvas id="cSketchPad" width="500" height="500" style="border: 2px solid gray" />
 </div>
-<input type="button" id="bGenImage" value="完成設計" onclick = "location.href='story3.2.html'"/>
+<input type="button" id="bGenImage"  value="完成設計" onclick = "location.href='story3.2.html'"/>
+<input type="button" value="清除全部" onclick="location.reload()">
 <div id="dOutput"></div>
 
 </body>

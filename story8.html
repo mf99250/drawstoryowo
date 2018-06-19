@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>繪本啦啦啦啦啦ouo</title>
+		<title>"繪"本</title>
 		<script src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js"></script>
 		<style type="text/css">
 			#bg     { background-image:url('start1.jpg');
@@ -34,17 +34,28 @@
 					background-color:#F0FFFF;
 					width:64px;
 					position:absolute;}
-					
+			.skip  {cursor:pointer;
+					font-family:微軟正黑體; 
+					text-align:center;	 
+					font-size:20px; 
+					font-weight:bold;
+					color:lightslategray;
+					background-color:#F0FFFF;
+					width:100px;
+					position:absolute;
+					left:600px;}
 			.ouo   {position: absolute;
 					top: 100px;
-					left: 430px;
+					left: 320px;
 					z-index:5;
-					width: 100px;
-					height: 150px}
+					width: 200px;
+					height: 300px}
 			.owo   {position: absolute;
 					top: 50px;
-					left: 200px;
-					z-index:4;}
+					left: 400px;
+					z-index:4;
+					width:400px;
+					height:400px;}
 		</style>
 		</style>
 		<meta charset = "utf-8">
@@ -54,6 +65,8 @@
 		<!-- Begin
 
 		var max=0;
+		
+		let count = 0;
 
 		function textlist() {
 
@@ -67,7 +80,7 @@
 
 		tl = new textlist( 
 		
-		"不愧是"+localStorage.getItem(localStorage.key(0))+"！成攻擊殺怪物就可以繼續前進了！",
+		"不愧是"+localStorage.getItem(localStorage.key(0))+"！成功擊殺怪物就可以繼續前進了！",
 		"經過重重關卡，"+localStorage.getItem(localStorage.key(0))+"終於到了惡龍居住的山洞外頭，請你設計一隻看起來極其凶殘的惡龍，這將是"+localStorage.getItem(localStorage.key(0))+"即將面臨的大BOSS。"
 		);
 
@@ -82,6 +95,9 @@
 		l = tl[x].length;
 
 		document.tickform.tickfield.value = tl[x].substring(0,pos);
+		
+		var nextbutton2 = document.getElementById("next2");
+			nextbutton2.innerHTML += '<p onclick="next2()" class = "button">[SKIP]</p>';
 
 		if(pos++ == l) {
 
@@ -97,8 +113,13 @@
 			//pos = 100;
 		} else
 
-		setTimeout("textticker()", 170);
+		if(count != 0)  setTimeout("textticker()", 10);
+		else setTimeout("textticker()", 130);
 
+		}
+		function next2()
+		{
+		   count = count+1;
 		}
 		function next()
 		{
@@ -121,7 +142,8 @@
 			<img id = "bg" style="display:block; margin:auto;" width="1100px" height="565px"> 
 			<h3><form name=tickform><textarea name=tickfield rows=4 cols=110 style="background-color: rgb(255,250,240); 
 			color: rgb(139,119,101); cursor: pointer; font-family: Microsoft JhengHei; font-size: 16px" wrap=virtual></textarea></form>
-			<p id = "next" class = "button" ></p>
+			<p id = "next" class = "button" >
+			<p id = "next2" class = "skip" ></p>
 			</h3>
 		</div>
 		
