@@ -1,0 +1,65 @@
+<html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"繪"本</title>
+		<style type="text/css">
+			#bg     { background-image:url('start1.jpg');
+					  z-index: "1";
+					  position:absolute;
+					  left: 100px;
+					}
+			h3     { position:absolute;
+					  z-index: "2";
+					  background-color: #FFFFCC;
+					  margin-bottom: .5em;
+					  font-family: Calibri; 
+					  font-size : 16px;
+					  font-weight: bold;
+					  border-width:thick;
+					  width: 50%;
+					  height: 400px;
+					  overflow: scroll;
+					  top:60px;
+					  left:320px;
+					}
+					
+			#ok     { font-family:微軟正黑體; 
+						position:absolute;
+						font-color: #ae8f00;
+						z-index: "2";
+						top: 500px;
+						left: 600px;
+					}
+
+		</style>
+		<meta charset = "utf-8">
+		<!--<link rel = "stylesheet" type="text/css" href = "index.css">-->
+		<script type="text/javascript">
+			function start()
+			{
+				localStorage.clear();
+			}
+			window.addEventListener( "load", start, false);
+		</script>
+	</head>
+	<body >
+		<div>
+			<embed src="bgm01.mp3" autostart=true hidden=true loop=true>
+			<img id = "bg" style="display:block; margin:auto;" width="1100px" height="565px"> 
+			<h3><p>「繪本」的遊戲簡介：</p>
+				<p>這是一個閱讀結合繪畫的網頁小遊戲，讓玩家在閱讀的同時由自己創作人物姓名及各種角色造型製作，希望能夠藉由自行設計故事出現的人物造型吸引玩家/讀者。</p>
+				<p>「繪本」的遊戲規則：</p>
+				<p>1. 每段故事都設有「skip」按鍵，只要快速連擊該按鍵就可以加快故事內容顯示的速度。</p>
+				<p>2. 每小段故事結束後需要玩家/讀者自行點擊出現的按鍵進入接下來的章節。</p>
+				<p>3. 遊戲共設有四個不同的繪畫項目，要請玩家/讀者幫忙藉由網頁的繪圖頁面完成。</p>
+				<p>4. 玩家/讀者輸入完勇者姓名後，需先點擊按鍵「就是他了」，再點擊旁邊的按鍵「來去畫畫」，勇者的名字才會被儲存，並連結到畫畫頁面。</p>
+				<p>注意事項：</p>
+				<p>※「skip」按鍵需快速連擊才會有加速效果。</p>
+				<p>※由於所有玩家/讀者繪製的圖片都帶有去背效果，因此建議要各位將圖案內的顏色塗滿會比較好觀賞。</p>
+			</h3>
+			<a href="index.html"><img id = "ok" src = "ok.jpg" width="50px" height="40px" onMouseOver="this.width=this.width*1.25;this.height=this.height*1.25" onMouseOut="this.width=this.width/1.25;this.height=this.height/1.25"></a>
+		</div>
+		
+	</body>
+</html>
